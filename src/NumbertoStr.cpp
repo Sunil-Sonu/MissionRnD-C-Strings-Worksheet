@@ -21,5 +21,9 @@ NOTES: Don't create new string.
 
 
 void number_to_str(float number, char *str,int afterdecimal){
-	
+	int i=0;
+	sprintf(str, "%f", number);
+	while (str[i] != '.')
+		i++;
+	str[(i + 2) + afterdecimal] = '\0';
 }
